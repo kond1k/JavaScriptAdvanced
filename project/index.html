@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<header>
-    <button class="btn-cart" type="button">Корзина</button>
-</header>
-<main>
-    <div class="products"></div>
-</main>
-<script src="./js/main.js"></script>
+    <div class="slider">
+        <header class="navbar navbar-dark bg-dark">
+            <button class="btn-cart btn btn-outline-success" type="button">Корзина</button>
+        </header>
+        <main>
+            <div class="products card-deck"></div>
+        </main>
+    </div>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

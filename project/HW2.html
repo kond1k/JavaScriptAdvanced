@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>HW2</title>
+</head>
+
+<body>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <div class="big_burger burger">
+        <img src="./img/big_burger.jpg" class="burger-img" alt="bigBurger">
+        <form>
+            <div class="form-check">
+                <input class="form-check-input" name="big-fill" type="radio" id="r1" value="5" checked>
+                <label class="form-check-label" for="r1"> С сыром</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="big-fill" type="radio" id="r2" value="13">
+                <label class="form-check-label" for="r2"> С Картошкой</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="big-fill" type="radio" id="r3" value="53">
+                <label class="form-check-label" for="r3"> С Салатом</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkSeaBig">
+                <label class="form-check-label" for="checkSea">
+                    Посыпать приправой
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkMayoBig">
+                <label class="form-check-label" for="checkMayo">
+                    Полить майонезом
+                </label>
+            </div>
+            <button type="button" class="btn btn-secondary" id="big-burger-button">Рассчитать стоимость</button>
+        </form>
+    </div>
+
+    <div class="small_burger burger">
+        <img src="./img/small_burger.jpg" class="burger-img" alt="smallBurger">
+        <form>
+            <div class="form-check">
+                <input class="form-check-input" name="small-fill" type="radio" id="r1" value="5" checked>
+                <label class="form-check-label" for="r1"> С сыром</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="small-fill" type="radio" id="r2" value="13">
+                <label class="form-check-label" for="r2"> С Картошкой</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="small-fill" type="radio" id="r3" value="53">
+                <label class="form-check-label" for="r3"> С Салатом</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkSeaSmall">
+                <label class="form-check-label" for="checkSea">
+                    Посыпать приправой
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkMayoSmall">
+                <label class="form-check-label" for="checkMayo">
+                    Полить майонезом
+                </label>
+            </div>
+            <button type="button" class="btn btn-secondary" id="small-burger-button">Рассчитать стоимость</button>
+        </form>
+    </div>
+    <script src="./js/HW2.js"></script>
+</body>
+
+</html>

@@ -2,3 +2,17 @@
     width: 75%;
     margin: auto;
 }
+
+.burger-radio {
+    display: block;
+}
+
+.burger-img {
+    width: 200px;
+    height: 200px;
+}
+
+.burger {
+    display: inline-block;
+    margin: 30px;
+}

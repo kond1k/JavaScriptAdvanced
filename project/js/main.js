@@ -60,9 +60,9 @@ class Products {
 
 class Product {
     constructor(product, img = "./img/Product.jpg") {
-        this.title = product.title;
+        this.title = product.product_name;
         this.price = product.price;
-        this.id = product.id;
+        this.id = product.id_product;
         this.img = img;
     }
 
@@ -72,7 +72,7 @@ class Product {
                      <div class = "card-body">
                         <h3 class="card-title">${this.title}</h3>
                         <p class="card-text">${this.price}</p>
-                        <button class="by-btn btn btn-primary btn-lg btn-block">Добавить в корзину</button>
+                        <button class="by-btn btn btn-primary btn-lg btn-block product-basket-btn">Добавить в корзину</button>
                     </div>
                 </div>`;
     }
@@ -80,11 +80,30 @@ class Product {
 
 
 class Basket {
+    constructor() {
+        this.products = [];
+        document.querySelector("#basket-btn").addEventListener('click', () => {
+            this.getProductsFromBasket()
+                .then(data => {
+                    this.products = [...data.contents];
+                    console.log([...data.contents]);
+                })
+        })
+    }
+
+    addProductToBasket(product) {
+        this.products.push(product);
+    }
+
+    getProductsFromBasket() {
+        return fetch(`${API}/getBasket.json`)
+            .then(response => response.json())
+            .catch(error => {
+                console.log(error);
+            });
+    }
 
 }
 
-class BasketItem {
 
-}
-
-new Products();
+test = new Products();

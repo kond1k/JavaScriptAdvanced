@@ -1,31 +1,42 @@
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
+
+let getRequest = (url) => {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(xhr.status);
+                }
+            }
+        }
+        xhr.send();
+    })
+}
+
+
 class Products {
     constructor(container = '.products') {
         this.container = container;
         this.goods = [];
         this.allProducts = [];
         this._fetchProducts();
-        this.render();
         this.getTotalPrice();
     }
 
     _fetchProducts() {
-        this.goods = [{
-            id: 1,
-            title: 'Notebook',
-            price: 20000
-        }, {
-            id: 2,
-            title: 'Mouse',
-            price: 1500
-        }, {
-            id: 3,
-            title: 'Keyboard',
-            price: 5000
-        }, {
-            id: 4,
-            title: 'Gamepad',
-            price: 4500
-        }]
+        getRequest(`${API}/catalogData.json`)
+            .then((data) => {
+                this.goods = [...JSON.parse(data)];
+                this.render();
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     render() {

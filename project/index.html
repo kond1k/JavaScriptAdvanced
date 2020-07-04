@@ -4,26 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="slider">
-        <header class="navbar navbar-dark bg-dark">
-            <button class="btn-cart btn btn-outline-success" id="basket-btn" type="button">Корзина</button>
+    <div id="app">
+        <header>
+            <div class="logo">Интернет-магазин</div>
+            <div class="cart">
+                <form action="#" class="search-form">
+                    <input type="text" class="search-field" v-model="searchLine">
+                    <button class="btn-search" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <button class="btn-cart" type="button" @click="showBasket = !showBasket">Корзина</button>
+                <div class="cart-block" v-if="showBasket">
+
+                </div>
+            </div>
         </header>
         <main>
-            <div class="products card-deck"></div>
+            <div class="products">
+                <div class="product-item" v-for="product of products" :key="product.id_product" v-if="product.product_name.includes(searchLine)">
+                    <img :src="imgCatalog" alt="Some img">
+                    <div class="desc">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}}₽</p>
+                        <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
-
-    <div class="hw4">
-
-    </div>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/main.js"></script>
-
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

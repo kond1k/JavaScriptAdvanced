@@ -4,32 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div id="app">
-        <header>
-            <div class="logo">Интернет-магазин</div>
-            <div class="cart">
-                <search-el></search-el>
-                <cart ref="cart"></cart>
-            </div>
+    <div class="slider">
+        <header class="navbar navbar-dark bg-dark">
+            <button class="btn-cart btn btn-outline-success" type="button">Корзина</button>
         </header>
         <main>
-            <products ref="products"></products>
+            <div class="products card-deck"></div>
         </main>
     </div>
-
-    </div>
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/CartComp.js"></script>
-    <script src="js/ProducComp.js"></script>
-    <script src="js/SearchComp.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
